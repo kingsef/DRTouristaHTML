@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+         @font-face {
+            font-family: Aloja;
+            src: url(assets/fonts/Aloja-Light.woff);
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+        .header {
+            font-family: Aloja;
+            background-color: rgb(3, 152, 158);
+            margin: 0;
+            font-size: 45px;
+            color: white;
+            padding-left: 20px;
+            padding-bottom: 0;
+        }
+        .Rsvform {
+            margin-top: 200px;
+            padding-left: 30px ;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+            z-index: 1;
+            margin-left: 30%;
+            margin-right: 30%;
+        }
+        label {
+            font-size: 25px;
+            color: black;
+            }
+        label {
+            font-family: Gill Sans, Gill Sans MT, 'Calibri', Trebuchet MS, sans-serif ;
+            color: black;
+	        font-size: 25px;
+            
+        }
+        .error {
+            background: #F2DEDE;
+            color: #0c0101;
+            padding: 10px;
+            width: 400px;
+            border-radius: 5px;
+            margin: 20px auto;
+        }
+        input[type=submit]:hover {
+                opacity: 0.80;
+                cursor: pointer;
+        }
+        .bg {
+            border-radius: 12px;
+            background-image: url(assets/img/DRTourista.png);
+            background-size: 500px 500px;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.5;
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            z-index: -1;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: auto;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+        }
+        .Rsvform form table th {
+            text-align: left;
+            padding-right: 30px;
+        }
+        .Rsvform form table th, td {
+            height: 60px;
+        }
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            height: 100%;
+            font-size: 20px            
+        }
+        .Rsvform table {
+            border: solid black 1px;
+            border-radius: 12px;
+            padding: 20px;
+        }
+    </style>
+    <title>Reservation</title>
+</head>
+<body>
+    <div class="header">
+        <table >
+            <tr>
+                <td rowspan="2"><img src="assets/img/DRT_LOGO-02.webp" alt="" style="height: 100px;"></td>
+                <td>DRTourista</td>
+                <td>
+            </tr>
+            <tr>
+                <td>
+                    <p style="font-family:'Arial'; font-size: 15px; font-weight: bold;">MUNICIPALITY OF<BR>
+                        DO&#209;A REMEDIOS TRINIDAD</BR>
+                    </p>
+                </td>
+            </tr>
+        </table>
+                
+    </div>
+    <div class="Rsvform">
+        <form action="">
+            <table>
+                <tr>
+                    <th><label for="Firstname">Firstname:</label></th>
+                    <td><input type="text" name="Firstname" required><br></td>
+                </tr>
+                <tr>
+                    <th><label for="Lastname">Lastname</label></th>
+                    <td><input type="text" name="Lastname" required><br></td>
+                </tr>
+                <tr>
+                    <th><label for="number">Phone no.</label></th>
+                    <td><input type="text" name="number" required><br></td>
+                </tr>
+                <tr>
+                    <th><label for="email">Email</label></th>
+                    <td><input type="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <th><label for="rdate">Check in</label></th>
+                    <td><input type="date" name="StartDate" id="userdate" onchange="TDate()" required /></td>
+                </tr>
+                <tr>
+                    <th><label for="rdate">Check out</label></th>
+                    <td><input type="date" name="StartDate" id="userdate" onchange="TDate()" required /></td>
+                </tr>
+                
+                <tr>
+                    <th><label for="rdate">Companions</label></th>
+                    
+                </tr>
+                <tr>
+                    <th style="text-align: right;"><label for="rdate">Female</label></th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th style="text-align: right;"><label for="rdate">Male</label></th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                <td colspan="2" style="text-align: center;"><input type="submit" name="add" value="Register" style="width: 250px; height: 40px; border-radius: 12px;"></td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+<script>
+    function TDate() {
+    var UserDate = document.getElementById("userdate").value;
+    var ToDate = new Date();
+
+    if (new Date(UserDate).getTime() <= ToDate.getTime()) {
+          alert("The Date must be Bigger or Equal to today date");
+          return false;
+     }
+    return true;
+} //ct:Zohaib Ijaz
+
+</script>
+</body>
+</html>
